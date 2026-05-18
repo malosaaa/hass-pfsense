@@ -73,7 +73,7 @@ async def async_load_cache(hass: HomeAssistant, entry_id: str):
         return None
 # -------------------------
 
-def (data: dict, path: str, default=None):
+def dict_get(data: dict, path: str, default=None):
     pathList = re.split(r"\.", path, flags=re.IGNORECASE)
     result = data
     for key in pathList:
