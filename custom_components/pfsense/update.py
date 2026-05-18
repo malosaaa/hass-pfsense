@@ -140,7 +140,7 @@ class PfSenseFirmwareUpdatesAvailableUpdate(PfSenseUpdate):
         attrs = {}
         info = dict_get(state, "firmware_update_info.base", {})
 
-        if info == False:
+        if not info:
             return attrs
 
         for key in info.keys():
