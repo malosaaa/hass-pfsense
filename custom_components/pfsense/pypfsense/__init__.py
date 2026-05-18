@@ -135,9 +135,7 @@ ini_set('display_errors', 0);
 $toreturn_real = $toreturn;
 $toreturn = [];
 $toreturn["real"] = json_encode($toreturn_real);
-""".format(
-            script
-        )
+""".format(script)
         response = self._get_proxy().pfsense.exec_php(script)
         response = json.loads(response["real"])
         return response
@@ -153,9 +151,7 @@ ini_set('display_errors', 0);
 $toreturn_real = $toreturn;
 $toreturn = [];
 $toreturn["real"] = json_encode($toreturn_real);
-""".format(
-            script
-        )
+""".format(script)
         response = self._get_proxy().pfsense.exec_php(script)
         response = json.loads(response["real"])
         return response
@@ -173,9 +169,7 @@ else {{
 $toreturn = [
   "data" => $ret,
 ];
-""".format(
-            json.dumps({"command": command, "background": background})
-        )
+""".format(json.dumps({"command": command, "background": background}))
         response = self._exec_php(script)
         return response["data"]
 
@@ -540,9 +534,7 @@ if ($retval == 0) {{
 $toreturn = [
   "data" => $retval
 ];
-""".format(
-            json.dumps({"key": key, "gateway": gateway})
-        )
+""".format(json.dumps({"key": key, "gateway": gateway}))
 
         self._exec_php(script)
 

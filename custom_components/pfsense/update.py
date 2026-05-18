@@ -2,7 +2,6 @@
 
 import logging
 import time
-from typing import Any
 
 from homeassistant.components.update import (
     UpdateDeviceClass,
@@ -39,7 +38,7 @@ async def async_setup_entry(
             config_entry,
             coordinator,
             UpdateEntityDescription(
-                key=f"firmware.update_available",
+                key="firmware.update_available",
                 name="Firmware Updates Available",
                 entity_category=EntityCategory.DIAGNOSTIC,
             ),
