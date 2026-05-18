@@ -25,7 +25,7 @@ def dict_get(data: dict, path: str, default=None):
         try:
             key = int(key) if key.isnumeric() else key
             result = result[key]
-        except:
+        except Exception:
             result = default
             break
 
