@@ -21,7 +21,6 @@ from homeassistant.const import (
 )
 from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
-from homeassistant.helpers.entity_registry import async_get
 from homeassistant.helpers.restore_state import RestoreEntity
 from homeassistant.helpers.update_coordinator import (
     CoordinatorEntity,
@@ -74,14 +73,14 @@ async def async_load_cache(hass: HomeAssistant, entry_id: str):
         return None
 # -------------------------
 
-def dict_get(data: dict, path: str, default=None):
+def (data: dict, path: str, default=None):
     pathList = re.split(r"\.", path, flags=re.IGNORECASE)
     result = data
     for key in pathList:
         try:
             key = int(key) if key.isnumeric() else key
             result = result[key]
-        except:
+        except Exception:
             result = default
             break
     return result
